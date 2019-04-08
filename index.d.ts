@@ -146,6 +146,16 @@ declare module Duktape {
      */
     function compact(o: any): any;
 
+    /**
+     * Hook function to add traceback information when an Error object has been created.
+     */
+    let errCreate: ((e: Error) => any) | undefined;
+
+    /**
+     * Hook function to add trackback information when an Error object has been thrown.
+     */
+    let errThrow: ((e: Error) => any) | undefined;
+
     interface Pointer {
         toString(): string;
         valueOf(): any;
